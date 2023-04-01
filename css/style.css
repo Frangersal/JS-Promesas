@@ -1,0 +1,18 @@
+.carta-imagen{
+    height: 15rem!important; 
+    max-width: 12rem!important; 
+}
+.carta-titulo{
+    overflow-y: scroll !important;
+    max-height: 50px!important;
+}
+.carta-texto{
+    overflow-y: scroll !important;
+    
+    max-height: 100px!important;
+
+}
+
+.carta{
+    height: 35rem!important;
+}
