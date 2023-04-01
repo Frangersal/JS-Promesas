@@ -114,14 +114,16 @@ function foreachProductos(producto) {
         producto.forEach(r => {            
             let row = 
             `
-            <div class="col-md-4 bg-success">
+            <div class="col-md-4">
                 <div class="card carta mt-2 mb-2" id="card" style="width: auto;">
                     <img src="${r.image}" class="card-img-top carta-imagen" id="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title carta-titulo" id="card-title">${r.title}</h5>
+                        <b class="carta-categoria" id="card-category">Categoria - ${r.category}</b>
                         <p class="card-text carta-texto" id="card-text">${r.description}</p>
                         <h5 class="card-title" id="card-price">$${r.price}</h5>
-                        <a href="#" class="btn btn-primary">Más info</a>
+                        
+                        <a href="#" class="btn btn-success">Más info</a>
                     </div>
                 </div>
             </div>
