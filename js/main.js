@@ -132,10 +132,41 @@ function foreachProductos(producto) {
                         <p class="card-text carta-texto" id="card-text">${r.description}</p>
                         <h5 class="card-title" id="card-price">$${r.price}</h5>
                         
-                        <a href="#" class="btn btn-success">Más info</a>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop_${r.id}">
+                        Más info
+                        </button>
                     </div>
                 </div>
             </div>
+
+            
+            <!-- Button trigger modal -->
+            
+            
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop_${r.id}" data-bs-backdrop="static" data-bs-keyboard="false" 
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">${r.title}</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    ${r.description}
+                    </div>
+                    
+                    <div class="modal-body">
+                    <h5  >$${r.price}</h5> 
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Close</button>
+                        
+                    </div>
+                </div>
+                </div>
+            </div>
+
             `;
             cuerpoRows.insertAdjacentHTML("beforeend", row);
         });//producto.forEach
