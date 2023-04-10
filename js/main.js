@@ -78,7 +78,7 @@ getProducto()
 */
 
 // ------
- 
+ /*
 
 //let datos = [];
 function getProducto() {
@@ -90,12 +90,35 @@ function getProducto() {
             resolve(producto);
         }, 5000);
     }); // new Promise  
+}*/
+
+function getProducto(){
+    let promesa = fetch("https://fakestoreapi.com/products", {
+        method: "GET"
+    });
+    promesa.then( 
+        (response) => {
+            response.json().then((prods) => {
+                    //crear Cards (prods);
+                    console.log("prods=>json()");
+                    console.log(prods);
+                }//prods
+            )//then json
+            .catch((err) => {
+                console.error("Error en el formato de la respuesta " + err.message);
+            });//catch json
+        }//response
+
+    )//Promesa.then
+    .catch((err)=>{
+        console.error("Error en la respuesta " + err.message);
+    });//Promesa.catch
 }
 // then cuando sea cierto
 // cuando no sea cierto da error
-getProducto()
-.then( (prod)=> foreachProductos(prod)  )
-.catch( (err)=> console.log(err.message) );
+getProducto();
+//.then( (prod)=> foreachProductos(prod)  )
+//.catch( (err)=> console.log(err.message) );
 // un foreach recorriendo el JSON producto que es un array
 
 //Funcion para recorrer el JSON y mostrarlo en forma de cartas al DOM
